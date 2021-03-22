@@ -5,7 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import Homepage from '../containers/pages/Homepage';
 // import Directory from '../containers/pages/Directory';
-import Favorite from '../containers/pages/Favorite';
+import History from '../containers/pages/History';
 import Account from '../containers/pages/Account';
 
 import TabComponent from '../components/Tabs';

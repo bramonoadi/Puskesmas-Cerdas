@@ -5,17 +5,17 @@ import {Transition, Transitioning} from 'react-native-reanimated';
 import Images from '../assets/images';
 
 const bgColors = {
-  home: '#FFE97C',
-  directory: '#FFE97C',
-  favorite: '#FFE97C',
-  account: '#FFE97C',
+  home: '#4BA2C3',
+  directory: '#4BA2C3',
+  history: '#4BA2C3',
+  account: '#4BA2C3',
 };
 
 const textColors = {
-  home: '#222',
-  directory: '#222',
-  favorite: '#222',
-  account: '#222',
+  home: '#fff',
+  directory: '#fff',
+  history: '#fff',
+  account: '#fff',
 };
 
 const Container = styled.TouchableWithoutFeedback``;

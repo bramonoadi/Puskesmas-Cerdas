@@ -15,23 +15,21 @@ import {Icon} from 'react-native-elements';
 import FastImage from 'react-native-fast-image';
 import {StatusBar} from 'react-native';
 import IconFavorite from '../../../components/atoms/IconFavorite';
-
-
+import LinearGradient from 'react-native-linear-gradient';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       images: [
-        'https://static.vecteezy.com/system/resources/previews/000/662/900/non_2x/restaurant-web-banner-vector.jpg',
-        'https://fs.easybanners.com/Templates/1318/TemplateIcon/1318.png',
-        'https://mir-s3-cdn-cf.behance.net/project_modules/disp/39495f68050781.5b4f5c571f0ea.jpg',
-        'https://rdbproject.files.wordpress.com/2012/07/header-2.jpg',
+        'https://web.kominfo.go.id/sites/default/files/users/4896/Banner%20Bantu%20Masyarakat%20Tahu%20COVID-19.jpeg',
+        'https://covid19.go.id/storage/app/media/Materi%20Edukasi/2020/November/kebalkenal.jpg',
+        'https://www.kalbe.co.id/portals/0/Images/slider/BannerWebsiteVaksin_Ind.jpg?ver=2021-01-20-084430-420',
+        'https://cdn.medcom.id/images/content/2020/05/30/1149027/6oK3PeBT7j.jpeg',
       ],
     };
   }
 
-  
   render() {
     return (
       <ScrollView>
@@ -41,16 +39,16 @@ export default class App extends Component {
           <View
             style={{
               flexDirection: 'row',
-              paddingTop: 30,
-              paddingBottom: 80,
+              paddingTop: 35,
+              paddingBottom: 90,
               alignContent: 'center',
               alignItems: 'center',
             }}>
             <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
               <Image
                 style={{
-                  width: 45,
-                  height: 45,
+                  width: 50,
+                  height: 50,
                   marginLeft: 15,
                   borderWidth: 2,
                   borderRadius: 50,
@@ -69,40 +67,23 @@ export default class App extends Component {
               <Text
                 style={{
                   fontFamily: 'Poppins-Bold',
-                  fontSize: 14,
-                  color: '#444',
-                  marginTop: 0,
+                  fontSize: 13,
+                  color: '#4BA2C3',
+                  marginTop: 4,
                 }}>
-                Bramono Adi
+                Halo,
               </Text>
               <Text
                 style={{
-                  fontFamily: 'Poppins-Regular',
-                  fontSize: 11,
+                  fontFamily: 'Poppins-Bold',
+                  fontSize: 16,
                   color: '#444',
                   marginTop: -3,
                 }}>
-                +628114120001
+                Bramono Adi
               </Text>
             </View>
 
-            <View
-              style={{
-                flex: 1,
-                right: 18,
-                alignItems: 'flex-end',
-                alignContent: 'center',
-                justifyContent: 'center',
-              }}>
-              <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailPremium')}>
-                <Icon
-                  color="#333"
-                  name="search"
-                  type="font-awesome-5"
-                  size={19}
-                />
-              </TouchableOpacity>
-            </View>
             <View
               style={{
                 flex: 1,
@@ -145,8 +126,8 @@ export default class App extends Component {
             <SliderBox
               ImageComponent={FastImage}
               images={this.state.images}
-              sliderBoxHeight={150}
-              onCurrentImagePressed={(index) =>
+              sliderBoxHeight={130}
+              onCurrentImagePressed={index =>
                 console.warn(`image ${index} pressed`)
               }
               dotColor="#FFE97C"
@@ -176,7 +157,10 @@ export default class App extends Component {
                 backgroundColor: '#fff',
               }}
               ImageComponentStyle={{
-                borderRadius: 15,
+                borderTopLeftRadius: 10,
+                borderTopRightRadius: 10,
+                borderBottomLeftRadius: 0,
+                borderBottomRightRadius: 0,
                 width: '93%',
                 marginTop: 0,
               }}
@@ -184,77 +168,74 @@ export default class App extends Component {
             />
           </View>
 
-          <View
+          <ImageBackground
+            source={require('../../../assets/images/background.jpg')}
+            imageStyle={{
+              borderTopLeftRadius: 0,
+              borderTopRightRadius: 0,
+              borderBottomLeftRadius: 10,
+              borderBottomRightRadius: 10,
+            }}
             style={{
-              flexDirection: 'row',
-              marginTop: 20,
-              marginHorizontal: 15,
-              paddingHorizontal: 15,
-              paddingVertical: 8,
               backgroundColor: '#fff',
-              borderRadius: 10,
+              marginLeft: 15,
+              marginRight: 15,
+              flexDirection: 'row',
+              justifyContent: 'space-between',
               elevation: 3,
-              justifyContent: 'center',
-              alignItems: 'center',
+              borderTopLeftRadius: 0,
+              borderTopRightRadius: 0,
+              borderBottomLeftRadius: 10,
+              borderBottomRightRadius: 10,
+              paddingHorizontal: 10,
+              paddingVertical: 8,
             }}>
-            <View style={{flex: 4, paddingRight: 5}}>
+            <View style={{flex: 5, paddingRight: 5}}>
               <Text
                 style={{
                   fontFamily: 'Poppins-SemiBold',
-                  fontSize: 11,
-                  color: '#222',
+                  fontSize: 10,
+                  color: '#fff',
                 }}>
-                Daftarkan Resto-mu, dan punya buku menu digital kekinian! 
-              </Text>
-            </View>
-            <View style={{flex: 2, paddingRight: 10, paddingLeft: 5}}>
-              <Text
-                style={{
-                  fontFamily: 'Poppins-Medium',
-                  fontSize: 12,
-                  color: '#222',
-                  backgroundColor: '#ffe97c',
-                  paddingHorizontal: 8,
-                  paddingVertical: 7,
-                  borderRadius: 50,
-                  textAlign: 'center',
-                }}>
-                Daftar
+                Lengkapi data diri, untuk menggunakan fitur pendaftaran antrian.
               </Text>
             </View>
             <View
-              style={{
-                borderRightWidth: 0.3,
-                borderColor: '#ddd',
-                height: 50,
-              }}></View>
-            <View style={{flex: 1, paddingRight: 5, alignItems: 'flex-end'}}>
-              <Image
+              style={{paddingRight: 0, paddingLeft: 5, alignSelf: 'center'}}>
+              <Text
                 style={{
-                  width: 30,
-                  height: 30,
-                }}
-                source={require('../../../assets/icon/qr.png')}
-              />
+                  fontFamily: 'Poppins-Medium',
+                  fontSize: 10,
+                  color: '#444',
+                  backgroundColor: '#fff',
+                  paddingHorizontal: 15,
+                  paddingVertical: 4,
+                  borderRadius: 50,
+
+                  textAlign: 'center',
+                }}>
+                Lengkapi
+              </Text>
             </View>
-          </View>
+          </ImageBackground>
 
           <View
             style={{
-              backgroundColor: '#ffffff',
-              marginTop: 20,
-              marginLeft: 15,
-              marginRight: 15,
-              borderRadius: 10,
-              // borderColor: '#dddddd',
-              // borderWidth: 0.5,
-              paddingHorizontal: 10,
-              paddingVertical: 20,
-              elevation: 3,
+              justifyContent: 'space-between',
+              flexDirection: 'row',
+              marginTop: 30,
+              marginLeft: 20,
+              marginRight: 20,
+              paddingBottom: 15,
             }}>
-            <View style={{marginTop: -5, paddingLeft: 10, paddingBottom: 15}}>
-              <Text style={{fontFamily: 'Poppins-Bold', fontSize: 14}}>
-                Pilih kategori.
+            <View style={{}}>
+              <Text
+                style={{
+                  fontFamily: 'Poppins-Bold',
+                  fontSize: 14,
+                  color: '#444',
+                }}>
+                Pendaftaran Periksa.
               </Text>
               <Text
                 style={{
@@ -263,97 +244,113 @@ export default class App extends Component {
                   color: '#999',
                   marginTop: -5,
                 }}>
-                Sesuai ke-kepo-an mu
+                Silahkan klik tombol dibawah ini
               </Text>
             </View>
+            <Image
+              style={{width: 16, height: 16, marginTop: 5}}
+              source={require('../../../assets/icon/all.png')}
+            />
+          </View>
+
+          <LinearGradient
+            colors={['#4EB0D5', '#308DB0', '#4EB0D5']}
+            style={{
+              paddingVertical: 25,
+              paddingHorizontal: 10,
+              borderRadius: 10,
+              marginHorizontal:15,
+            }}>
+            <Text style={{
+                fontFamily: 'Poppins-Bold',
+                fontSize: 16,
+                color: '#fff',
+                textAlign: 'center',
+              }}>Dapatkan Nomor Antrian</Text>
+          </LinearGradient>
+
+          <View
+            style={{
+              justifyContent: 'space-between',
+              flexDirection: 'row',
+              marginTop: 30,
+              marginLeft: 20,
+              marginRight: 20,
+              paddingBottom: 15,
+            }}>
+            <View style={{}}>
+              <Text
+                style={{
+                  fontFamily: 'Poppins-Bold',
+                  fontSize: 14,
+                  color: '#444',
+                }}>
+                Informasi.
+              </Text>
+              <Text
+                style={{
+                  fontFamily: 'Poppins-Regular',
+                  fontSize: 12,
+                  color: '#999',
+                  marginTop: -5,
+                }}>
+                Layanan dan kesehatan
+              </Text>
+            </View>
+            <Image
+              style={{width: 16, height: 16, marginTop: 5}}
+              source={require('../../../assets/icon/all.png')}
+            />
+          </View>
+
+          <View
+            style={{
+              backgroundColor: '#ffffff',
+              marginTop: 0,
+              marginLeft: 15,
+              marginRight: 15,
+              borderRadius: 10,
+              // borderColor: '#dddddd',
+              // borderWidth: 0.5,
+              paddingHorizontal: 10,
+              paddingVertical: 20,
+              borderWidth:0.5,
+              borderColor:'#ddd'
+            }}>
             <View>
               <View
                 style={{
                   flexDirection: 'row',
                 }}>
-                <View style={{width: '25%'}}>
+                <View style={{width: '33.33%'}}>
                   <TouchableOpacity
                     onPress={() => navigation.navigate('Order')}>
                     <Image
                       style={styles.imagemenu}
-                      source={require('../../../assets/icon/minuman.png')}
+                      source={require('../../../assets/icon/hospital.png')}
                     />
-                    <Text style={styles.tetxmenu}>Minuman</Text>
+                    <Text style={styles.tetxmenu}>Lihat Puskesmas</Text>
                   </TouchableOpacity>
                 </View>
-                <View style={{width: '25%'}}>
+                <View style={{width: '33.33%'}}>
                   <TouchableOpacity
                     onPress={() => navigation.navigate('Product')}>
                     <Image
                       style={styles.imagemenu}
-                      source={require('../../../assets/icon/snack.png')}
+                      source={require('../../../assets/icon/covid.png')}
                     />
-                    <Text style={styles.tetxmenu}>Jajanan</Text>
+                    <Text style={styles.tetxmenu}>Info Covid-19</Text>
                   </TouchableOpacity>
                 </View>
-                <View style={{width: '25%'}}>
+                <View style={{width: '33.33%'}}>
                   <TouchableOpacity
                     onPress={() => navigation.navigate('Piutang')}>
                     <Image
                       style={styles.imagemenu}
-                      source={require('../../../assets/icon/restoran.png')}
+                      source={require('../../../assets/icon/artikel.png')}
                     />
-                    <Text style={styles.tetxmenu}>Restoran</Text>
+                    <Text style={styles.tetxmenu}>Artikel Kesehatan</Text>
                   </TouchableOpacity>
-                </View>
-
-                <View style={{width: '25%'}}>
-                  <Image
-                    style={styles.imagemenu}
-                    source={require('../../../assets/icon/cafe.png')}
-                  />
-                  <Text style={styles.tetxmenu}>Cafe</Text>
-                </View>
-              </View>
-            </View>
-
-            <View>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  paddingTop: 15,
-                }}>
-                <View style={{width: '25%'}}>
-                  <Image
-                    style={styles.imagemenu}
-                    source={require('../../../assets/icon/warung.png')}
-                  />
-                  <Text style={styles.tetxmenu}>Warung</Text>
-                </View>
-
-                <View style={{width: '25%'}}>
-                  <TouchableOpacity
-                    onPress={() => navigation.navigate('Absensi')}>
-                    <Image
-                      style={styles.imagemenu}
-                      source={require('../../../assets/icon/oleholeh.png')}
-                    />
-                    <Text style={styles.tetxmenu}>Oleh-oleh</Text>
-                  </TouchableOpacity>
-                </View>
-
-                <View style={{width: '25%'}}>
-                  <TouchableOpacity
-                    onPress={() => navigation.navigate('Staff')}>
-                    <Image
-                      style={styles.imagemenu}
-                      source={require('../../../assets/icon/kue.png')}
-                    />
-                    <Text style={styles.tetxmenu}>Kue</Text>
-                  </TouchableOpacity>
-                </View>
-
-                <View style={{width: '25%'}}>
-                  <Image
-                    style={styles.imagemenu}
-                    source={require('../../../assets/icon/lainnya.png')}
-                  />
-                  <Text style={styles.tetxmenu}>Lainnya</Text>
                 </View>
               </View>
             </View>
@@ -366,11 +363,11 @@ export default class App extends Component {
               marginTop: 30,
               marginLeft: 20,
               marginRight: 20,
-              paddingBottom: 15,
+              paddingBottom: 10,
             }}>
             <View style={{}}>
               <Text style={{fontFamily: 'Poppins-Bold', fontSize: 14}}>
-                Rumah makan terbaru.
+                Artikel Kesehatan.
               </Text>
               <Text
                 style={{
@@ -379,26 +376,31 @@ export default class App extends Component {
                   color: '#999',
                   marginTop: -5,
                 }}>
-                di sekitarmu
+                Pengetahuan hidup sehat
               </Text>
             </View>
-            <Image
-              style={{width: 16, height: 16, marginTop: 5}}
-              source={require('../../../assets/icon/all.png')}
-            />
+            <Text
+              style={{
+                alignSelf: 'center',
+                fontFamily: 'Poppins-Medium',
+                color: '#666',
+                fontSize: 12,
+              }}>
+              Lihat Semua
+            </Text>
           </View>
 
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
-            style={{flexDirection: 'row', marginTop: 0, paddingLeft: 10}}>
+            style={{flexDirection: 'row', marginBottom: 30, paddingLeft: 10}}>
             <View style={styles.box}>
               <TouchableOpacity
                 onPress={() => navigation.navigate('DetailPremium')}>
                 <View style={styles.inner}>
                   <Image
                     style={styles.imageproduct}
-                    source={require('../../../assets/images/pizza.jpg')}
+                    source={require('../../../assets/images/3.png')}
                   />
                   <View style={styles.iconfav}>
                     <IconFavorite />
@@ -410,10 +412,12 @@ export default class App extends Component {
             </View>
 
             <View style={styles.box}>
+            <TouchableOpacity
+                onPress={() => navigation.navigate('DetailPremium')}>
               <View style={styles.inner}>
                 <Image
                   style={styles.imageproduct}
-                  source={require('../../../assets/images/kebab.jpeg')}
+                  source={require('../../../assets/images/2.jpg')}
                 />
                 <View style={styles.iconfav}>
                   <IconFavorite />
@@ -421,13 +425,14 @@ export default class App extends Component {
                 <Text style={styles.titleproduct}>Kebab</Text>
                 <Text style={styles.alamat}>Mlati, Sleman</Text>
               </View>
+              </TouchableOpacity>
             </View>
 
             <View style={styles.box}>
               <View style={styles.inner}>
                 <Image
                   style={styles.imageproduct}
-                  source={require('../../../assets/images/mcd.jpg')}
+                  source={require('../../../assets/images/7.jpg')}
                 />
                 <View style={styles.iconfav}>
                   <IconFavorite />
@@ -436,178 +441,9 @@ export default class App extends Component {
                 <Text style={styles.alamat}>Kalasan, Sleman</Text>
               </View>
             </View>
-
-            <View style={styles.box}>
-              <View style={styles.inner}>
-                <Image
-                  style={styles.imageproduct}
-                  source={require('../../../assets/images/banner.png')}
-                />
-                <View style={styles.iconfav}>
-                  <IconFavorite />
-                </View>
-                <Text style={styles.titleproduct}>KFC Bantul</Text>
-                <Text style={styles.alamat}>Banguntirto, Bantul</Text>
-              </View>
-            </View>
-
-            <View style={styles.box}>
-              <View style={styles.inner}>
-                <Image
-                  style={styles.imageproduct}
-                  source={require('../../../assets/images/bakso.jpg')}
-                />
-                <View style={styles.iconfav}>
-                  <IconFavorite />
-                </View>
-                <Text style={styles.titleproduct}>Bakso Lap Tembak</Text>
-                <Text style={styles.alamat}>Parangtritis, Bantul</Text>
-              </View>
-            </View>
-
-            <View style={styles.box}>
-              <View style={styles.inner}>
-                <Image
-                  style={styles.imageproduct}
-                  source={require('../../../assets/images/bebek.jpg')}
-                />
-                <View style={styles.iconfav}>
-                  <IconFavorite />
-                </View>
-                <Text style={styles.titleproduct}>Bebek H. Slamet</Text>
-                <Text style={styles.alamat}>Wates, Kulonprogo</Text>
-              </View>
-            </View>
-
-            <View
-              style={{width: 160, height: 223, padding: 6, marginRight: 20}}>
-              <View style={styles.inner}>
-                <Image
-                  style={styles.imageproduct}
-                  source={require('../../../assets/images/hokben.jpg')}
-                />
-                <View style={styles.iconfav}>
-                  <IconFavorite />
-                </View>
-                <Text style={styles.titleproduct}>HokBen</Text>
-                <Text style={styles.alamat}>Piyungan, Prambanan</Text>
-              </View>
-            </View>
           </ScrollView>
 
-          <Image
-            style={{
-              width: '93%',
-              height: 70,
-              marginTop: 5,
-              borderRadius: 10,
-              alignSelf: 'center',
-              marginBottom: 10,
-              marginTop: 20,
-            }}
-            source={require('../../../assets/images/bannerbawah.jpg')}
-          />
-
-          <View
-            style={{
-              justifyContent: 'space-between',
-              flexDirection: 'row',
-              marginTop: 20,
-              marginLeft: 20,
-              marginRight: 20,
-              paddingBottom: 15,
-            }}>
-            <View style={{}}>
-              <Text style={{fontFamily: 'Poppins-Bold', fontSize: 14}}>
-                Tapping Terbanyak.
-              </Text>
-              <Text
-                style={{
-                  fontFamily: 'Poppins-Regular',
-                  fontSize: 12,
-                  color: '#999',
-                  marginTop: -5,
-                }}>
-                dari QR-code DaftarMenu
-              </Text>
-            </View>
-            <Image
-              style={{width: 16, height: 16, marginTop: 5}}
-              source={require('../../../assets/icon/all.png')}
-            />
-          </View>
-
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            style={{
-              flexDirection: 'row',
-              marginTop: 0,
-              paddingLeft: 10,
-              paddingRight: 140,
-            }}>
-            <View style={styles.box}>
-              <TouchableOpacity
-                onPress={() => navigation.navigate('DetailProduct')}>
-                <View style={styles.inner}>
-                  <Image
-                    style={styles.imageproduct}
-                    source={require('../../../assets/images/pempek.jpg')}
-                  />
-                  <View style={styles.iconfav}>
-                    <IconFavorite />
-                  </View>
-                  <Text style={styles.titleproduct}>Pempek Ny.Kamto</Text>
-                  <Text style={styles.alamat}>Depok, Sleman</Text>
-                </View>
-              </TouchableOpacity>
-            </View>
-
-            <View style={styles.box}>
-              <View style={styles.inner}>
-                <Image
-                  style={styles.imageproduct}
-                  source={require('../../../assets/images/bensu.png')}
-                />
-                <View style={styles.iconfav}>
-                  <IconFavorite />
-                </View>
-                <Text style={styles.titleproduct}>Geprek Bensu</Text>
-                <Text style={styles.alamat}>Mlati, Sleman</Text>
-              </View>
-            </View>
-
-            <View style={styles.box}>
-              <View style={styles.inner}>
-                <Image
-                  style={styles.imageproduct}
-                  source={require('../../../assets/images/shaburi.jpg')}
-                />
-                <View style={styles.iconfav}>
-                  <IconFavorite />
-                </View>
-                <Text style={styles.titleproduct}>Shaburi Kintan</Text>
-                <Text style={styles.alamat}>Kalasan, Sleman</Text>
-              </View>
-            </View>
-
-            <View
-              style={{width: 160, height: 223, padding: 6, marginRight: 20}}>
-              <View style={styles.inner}>
-                <Image
-                  style={styles.imageproduct}
-                  source={require('../../../assets/images/mieayam.jpg')}
-                />
-                <View style={styles.iconfav}>
-                  <IconFavorite />
-                </View>
-                <Text style={styles.titleproduct}>Mie Ayam 77</Text>
-                <Text style={styles.alamat}>Banguntirto, Bantul</Text>
-              </View>
-            </View>
-          </ScrollView>
-
-          <View
+          {/* <View
             style={{
               justifyContent: 'space-between',
               flexDirection: 'row',
@@ -683,20 +519,19 @@ export default class App extends Component {
                 Detail
               </Text>
             </View>
-          </ImageBackground>
+          </ImageBackground> */}
         </View>
       </ScrollView>
     );
   }
 }
 
-
 const styles = StyleSheet.create({
   imagemenu: {
     alignSelf: 'center',
-    width: 40,
-    height: 40,
-    marginTop: 10,
+    width: 50,
+    height: 50,
+    marginTop: 0,
   },
   tetxmenu: {
     fontFamily: 'Poppins-Medium',
@@ -713,7 +548,9 @@ const styles = StyleSheet.create({
   inner: {
     backgroundColor: '#fff',
     borderRadius: 5,
-    elevation: 1,
+    
+    borderWidth:0.5,
+    borderColor:'#ddd'
   },
   titleproduct: {
     fontFamily: 'Poppins-Bold',

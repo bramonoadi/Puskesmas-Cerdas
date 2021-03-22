@@ -1,13 +1,13 @@
 import Homepage from './Homepage';
 import DetailPremium from './DetailPremium';
 import Directory from './Directory';
-import Favorite from './Favorite';
+import History from './History';
 import Account from './Account';
 
 export {
   Homepage,
   DetailPremium,
   Directory,
-  Favorite,
+  History,
   Account,
 };

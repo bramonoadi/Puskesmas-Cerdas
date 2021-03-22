@@ -3,7 +3,7 @@
   images={this.state.images}
   sliderBoxHeight={200}
   onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
-  dotColor="#FFEE58"
+  dotColor="#4BA2C3"
   inactiveDotColor="#90A4AE"
   paginationBoxVerticalPadding={20}
   autoplay

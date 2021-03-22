@@ -3,7 +3,7 @@ import {Header, Icon} from 'react-native-elements';
 import {StyleSheet, Text, View, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-const Favorite = ({navigation}) => {
+const History = ({navigation}) => {
   return (
     <View style={{flex: 1}}>
       <View style={{flex: 1}}>
@@ -198,7 +198,7 @@ const Favorite = ({navigation}) => {
   );
 };
 
-export default Favorite;
+export default History;
 
 const styles = StyleSheet.create({
   cardstyle: {

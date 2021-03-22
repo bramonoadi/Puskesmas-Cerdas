@@ -5,7 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import Homepage from '../containers/pages/Homepage';
 import Directory from '../containers/pages/Directory';
-import Favorite from '../containers/pages/Favorite';
+import History from '../containers/pages/History';
 import Account from '../containers/pages/Account';
 
 import TabComponent from '../components/Tabs';
@@ -37,10 +37,10 @@ function RouterBottom() {
         }}
       />
       <Tab.Screen
-        name="Favorite"
-        component={Favorite}
+        name="History"
+        component={History}
         options={{
-          tabBarButton: (props) => <TabComponent label="favorite" {...props} />,
+          tabBarButton: (props) => <TabComponent label="history" {...props} />,
         }}
       />
       <Tab.Screen
