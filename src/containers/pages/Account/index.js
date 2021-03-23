@@ -6,8 +6,44 @@ import LinearGradient from 'react-native-linear-gradient';
 
 const Account = ({navigation}) => {
   return (
-    <View style={{flex: 1}}>
-      <StatusBar backgroundColor="#fff" barStyle="dark-content" />
+    <View style={{flex: 1, backgroundColor:'#f2f2f2'}}>
+      <StatusBar backgroundColor="#f2f2f2" barStyle="dark-content" />
+
+<View
+            style={{
+              justifyContent: 'space-between',
+              flexDirection: 'row',
+              marginTop: 15,
+              marginLeft: 20,
+              marginRight: 20,
+              paddingBottom: 0,
+            }}>
+            <View style={{}}>
+              <Text
+                style={{
+                  fontFamily: 'Poppins-Bold',
+                  fontSize: 14,
+                  color: '#444',
+                }}>
+                Profil Saya.
+              </Text>
+              <Text
+                style={{
+                  fontFamily: 'Poppins-Regular',
+                  fontSize: 12,
+                  color: '#999',
+                  marginTop: -5,
+                }}>
+                Account dan informasi lainnya
+              </Text>
+            </View>
+            <Image
+              style={{width: 16, height: 16, marginTop: 5}}
+              source={require('../../../assets/icon/all.png')}
+            />
+          </View>
+
+      <StatusBar backgroundColor="#f2f2f2" barStyle="dark-content" />
       <View style={{flex: 1}}>
         <View>
           <LinearGradient
@@ -68,7 +104,7 @@ const Account = ({navigation}) => {
             paddingVertical: 5,
             paddingHorizontal: 15,
           }}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop:5}}>
             <Text style={styles.textkiri}>Alamat</Text>
             <Text style={styles.textkanan}> 
               Pr. Banjeng Asri No.D5 Maguwoharjo, Depok, Sleman Yogyakarta
@@ -92,25 +128,7 @@ const Account = ({navigation}) => {
             <Text style={styles.textkanan}>08114120001</Text>
           </View>
 
-          {/* <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={styles.textkiri}>No. SIM</Text>
-            <Text style={styles.textkanan}>34282467688</Text>
-          </View> */}
-
-          {/* <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={styles.textkiri}>Kendaraan</Text>
-            <Text style={styles.textkanan}>Honda Vario</Text>
-          </View> */}
-
-          {/* <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={styles.textkiri}>Warna</Text>
-            <Text style={styles.textkanan}>Hitam</Text>
-          </View>
-
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={styles.textkiri}>No. TNKB</Text>
-            <Text style={styles.textkanan}>AB 7777 DC</Text>
-          </View> */}
+          
         </View>
 
         <View
@@ -180,14 +198,14 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#666',
     flex:2,
-    paddingVertical: 4,
+    paddingVertical: 1,
   },
   textkanan: {
     fontFamily: 'Poppins-SemiBold',
     fontSize: 13,
     flex:4,
     color: '#666',
-    paddingVertical: 4,
+    paddingVertical: 1,
     textAlign:'right',
   },
   textbottomnav: {

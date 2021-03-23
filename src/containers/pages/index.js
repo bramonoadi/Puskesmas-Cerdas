@@ -1,13 +1,17 @@
 import Homepage from './Homepage';
-import DetailPremium from './DetailPremium';
+import DetailMerchant from './DetailMerchant';
 import Directory from './Directory';
 import History from './History';
 import Account from './Account';
+import NewsList from './NewsList';
+import NewsDetail from './NewsDetail';
 
 export {
   Homepage,
-  DetailPremium,
+  DetailMerchant,
   Directory,
   History,
   Account,
+  NewsList,
+  NewsDetail,
 };

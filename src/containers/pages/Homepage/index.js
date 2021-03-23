@@ -14,7 +14,6 @@ import {SliderBox} from 'react-native-image-slider-box';
 import {Icon} from 'react-native-elements';
 import FastImage from 'react-native-fast-image';
 import {StatusBar} from 'react-native';
-import IconFavorite from '../../../components/atoms/IconFavorite';
 import LinearGradient from 'react-native-linear-gradient';
 
 export default class App extends Component {
@@ -33,8 +32,8 @@ export default class App extends Component {
   render() {
     return (
       <ScrollView>
-        <View style={{backgroundColor: '#f9f9f9'}}>
-          <StatusBar backgroundColor="#f9f9f9" barStyle="dark-content" />
+        <View style={{backgroundColor: '#f2f2f2'}}>
+          <StatusBar backgroundColor="#f2f2f2" barStyle="dark-content" />
 
           <View
             style={{
@@ -44,7 +43,8 @@ export default class App extends Component {
               alignContent: 'center',
               alignItems: 'center',
             }}>
-            <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Account')}>
               <Image
                 style={{
                   width: 50,
@@ -253,21 +253,27 @@ export default class App extends Component {
             />
           </View>
 
-          <LinearGradient
-            colors={['#4EB0D5', '#308DB0', '#4EB0D5']}
-            style={{
-              paddingVertical: 25,
-              paddingHorizontal: 10,
-              borderRadius: 10,
-              marginHorizontal:15,
-            }}>
-            <Text style={{
-                fontFamily: 'Poppins-Bold',
-                fontSize: 16,
-                color: '#fff',
-                textAlign: 'center',
-              }}>Dapatkan Nomor Antrian</Text>
-          </LinearGradient>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('Directory')}>
+            <LinearGradient
+              colors={['#4EB0D5', '#308DB0', '#4EB0D5']}
+              style={{
+                paddingVertical: 25,
+                paddingHorizontal: 10,
+                borderRadius: 10,
+                marginHorizontal: 15,
+              }}>
+              <Text
+                style={{
+                  fontFamily: 'Poppins-Bold',
+                  fontSize: 16,
+                  color: '#fff',
+                  textAlign: 'center',
+                }}>
+                Dapatkan Nomor Antrian
+              </Text>
+            </LinearGradient>
+          </TouchableOpacity>
 
           <View
             style={{
@@ -314,8 +320,8 @@ export default class App extends Component {
               // borderWidth: 0.5,
               paddingHorizontal: 10,
               paddingVertical: 20,
-              borderWidth:0.5,
-              borderColor:'#ddd'
+              borderWidth: 0.5,
+              borderColor: '#ddd',
             }}>
             <View>
               <View
@@ -324,7 +330,7 @@ export default class App extends Component {
                 }}>
                 <View style={{width: '33.33%'}}>
                   <TouchableOpacity
-                    onPress={() => navigation.navigate('Order')}>
+                    onPress={() => this.props.navigation.navigate('Directory')}>
                     <Image
                       style={styles.imagemenu}
                       source={require('../../../assets/icon/hospital.png')}
@@ -344,7 +350,7 @@ export default class App extends Component {
                 </View>
                 <View style={{width: '33.33%'}}>
                   <TouchableOpacity
-                    onPress={() => navigation.navigate('Piutang')}>
+                    onPress={() => this.props.navigation.navigate('NewsList')}>
                     <Image
                       style={styles.imagemenu}
                       source={require('../../../assets/icon/artikel.png')}
@@ -379,15 +385,19 @@ export default class App extends Component {
                 Pengetahuan hidup sehat
               </Text>
             </View>
-            <Text
-              style={{
-                alignSelf: 'center',
-                fontFamily: 'Poppins-Medium',
-                color: '#666',
-                fontSize: 12,
-              }}>
-              Lihat Semua
-            </Text>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('NewsList')}>
+              <Text
+                style={{
+                  alignSelf: 'center',
+                  fontFamily: 'Poppins-Medium',
+                  color: '#666',
+                  fontSize: 12,
+                  paddingTop: 16,
+                }}>
+                Lihat Semua
+              </Text>
+            </TouchableOpacity>
           </View>
 
           <ScrollView
@@ -402,29 +412,27 @@ export default class App extends Component {
                     style={styles.imageproduct}
                     source={require('../../../assets/images/3.png')}
                   />
-                  <View style={styles.iconfav}>
-                    <IconFavorite />
-                  </View>
-                  <Text style={styles.titleproduct}>Pizza Hut</Text>
-                  <Text style={styles.alamat}>Depok, Sleman</Text>
+
+                  <Text style={styles.titleproduct}>
+                    Tidur teratur untuk menjaga stamina optimal
+                  </Text>
                 </View>
               </TouchableOpacity>
             </View>
 
             <View style={styles.box}>
-            <TouchableOpacity
+              <TouchableOpacity
                 onPress={() => navigation.navigate('DetailPremium')}>
-              <View style={styles.inner}>
-                <Image
-                  style={styles.imageproduct}
-                  source={require('../../../assets/images/2.jpg')}
-                />
-                <View style={styles.iconfav}>
-                  <IconFavorite />
+                <View style={styles.inner}>
+                  <Image
+                    style={styles.imageproduct}
+                    source={require('../../../assets/images/2.jpg')}
+                  />
+
+                  <Text style={styles.titleproduct}>
+                    Masker non-medis, bahaya dan resikonya..
+                  </Text>
                 </View>
-                <Text style={styles.titleproduct}>Kebab</Text>
-                <Text style={styles.alamat}>Mlati, Sleman</Text>
-              </View>
               </TouchableOpacity>
             </View>
 
@@ -434,11 +442,10 @@ export default class App extends Component {
                   style={styles.imageproduct}
                   source={require('../../../assets/images/7.jpg')}
                 />
-                <View style={styles.iconfav}>
-                  <IconFavorite />
-                </View>
-                <Text style={styles.titleproduct}>McD</Text>
-                <Text style={styles.alamat}>Kalasan, Sleman</Text>
+
+                <Text style={styles.titleproduct}>
+                  Mengenal buah-buahan untuk daya tahan tubuh
+                </Text>
               </View>
             </View>
           </ScrollView>
@@ -548,14 +555,15 @@ const styles = StyleSheet.create({
   inner: {
     backgroundColor: '#fff',
     borderRadius: 5,
-    
-    borderWidth:0.5,
-    borderColor:'#ddd'
+
+    borderWidth: 0.5,
+    borderColor: '#ddd',
   },
   titleproduct: {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 11,
+    fontFamily: 'Poppins-Medium',
+    fontSize: 10,
     paddingTop: 10,
+    color: '#444',
     paddingBottom: 10,
     paddingHorizontal: 12,
     borderTopWidth: 0.4,

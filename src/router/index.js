@@ -3,37 +3,38 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import Homepage from '../containers/pages/Homepage';
-// import Directory from '../containers/pages/Directory';
-import History from '../containers/pages/History';
-import Account from '../containers/pages/Account';
-
-import TabComponent from '../components/Tabs';
-import {DetailPremium, Directory} from '../../src/containers/pages';
+import {DetailMerchant, Directory,} from '../../src/containers/pages';
 
 const Stack = createStackNavigator();
 
 // function navigation() {
 //   return (
-
+// x
 //   );
 // }
 
 const DirectoryNavigator = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      initial={Directory}
+      initialRouteName={Directory}
+      screenOptions={{headerShown: false}}>
       <Stack.Screen
         name="Directory"
         component={Directory}
-        options={{headerShown: false}}
+        options={
+          {
+            // headerShown: true
+          }
+        }
       />
-
       <Stack.Screen
-        name="DetailPremium"
-        component={DetailPremium}
+        name="DetailMerchant"
+        component={DetailMerchant}
         options={{
-          headerLeft: false,
-          headerShown: false,
+          // headerLeft: true,
+          tabBarVisible: false,
+          headerShown: true,
           title: 'Detail Merchant',
           headerStyle: {backgroundColor: '#ffffff'},
           headerTintColor: '#444444',
@@ -41,6 +42,7 @@ const DirectoryNavigator = () => {
         }}
       />
 
+     
     </Stack.Navigator>
   );
 };

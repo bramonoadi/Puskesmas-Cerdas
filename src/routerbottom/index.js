@@ -9,7 +9,7 @@ import History from '../containers/pages/History';
 import Account from '../containers/pages/Account';
 
 import TabComponent from '../components/Tabs';
-import {DetailPremium} from '../containers/pages';
+import { HomepageNavigator } from "../routerhomepage";
 import { DirectoryNavigator } from "../router";
 
 
@@ -21,19 +21,69 @@ function RouterBottom() {
       {/* <Tab.Screen name="Home" component={MainStackNavigator} /> */}
       <Tab.Screen
         name="Homepage"
-        component={Homepage}
-        options={{
-          tabBarButton: (props) => <TabComponent label="home" {...props} />,
+        component={HomepageNavigator}
+        options={({ navigation }) => {
+          const { routes, index } = navigation.dangerouslyGetState();
+          // console.log(routes)
+          const { state: exploreState } = routes[index];
+          
+          let tabBarVisible = true;
+          if (exploreState) {
+            const { routes: exploreRoutes, index: exploreIndex } = exploreState;
+            const exploreActiveRoute = exploreRoutes[exploreIndex];
+            console.log(exploreActiveRoute.name)
+            if (exploreActiveRoute.name === "DetailMerchant") {
+              tabBarVisible = false;
+            }
+            if (exploreActiveRoute.name === "Directory") {
+              tabBarVisible = false;
+            }
+            if (exploreActiveRoute.name === "NewsList") {
+              tabBarVisible = false;
+            }
+            if (exploreActiveRoute.name === "NewsDetail") {
+              tabBarVisible = false;
+            }
+          }
+          //   tabBarButton: (props) => (
+          //   <TabComponent label="directory" {...props} />
+          // ),
+          return {
+            tabBarVisible,
+            tabBarButton: (props) => (
+              <TabComponent label="home" {...props} />
+            ),
+          };
         }}
       />
       <Tab.Screen
         name="Directory"
         component={DirectoryNavigator}
-        // component={Directory}
-        options={{
-          tabBarButton: (props) => (
-            <TabComponent label="directory" {...props} />
-          ),
+
+        options={({ navigation }) => {
+          const { routes, index } = navigation.dangerouslyGetState();
+          // console.log(routes)
+          const { state: exploreState } = routes[index];
+          
+          let tabBarVisible = true;
+          if (exploreState) {
+            const { routes: exploreRoutes, index: exploreIndex } = exploreState;
+            const exploreActiveRoute = exploreRoutes[exploreIndex];
+            console.log(exploreActiveRoute.name)
+            if (exploreActiveRoute.name === "DetailMerchant") {
+              tabBarVisible = false;
+            }
+          }
+          //   tabBarButton: (props) => (
+          //   <TabComponent label="directory" {...props} />
+          // ),
+          return {
+            tabBarVisible,
+            tabBarButton: (props) => (
+              // <AntDesign name="search1" color={color} size={size} />
+              <TabComponent label="directory" {...props} />
+            ),
+          };
         }}
       />
       <Tab.Screen

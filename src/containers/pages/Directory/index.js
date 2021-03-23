@@ -6,6 +6,7 @@ import {
   View,
   Image,
   ScrollView,
+  StatusBar,
   TextInput,
 } from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
@@ -28,7 +29,8 @@ class Directory extends React.Component {
 
   render() {
     return (
-      <View style={{backgroundColor: '#f9f9f9'}}>
+      <View style={{backgroundColor: '#f2f2f2'}}>
+        <StatusBar backgroundColor="#f2f2f2" barStyle="dark-content" />
         <View
           style={{
             flexDirection: 'row',
@@ -112,7 +114,7 @@ class Directory extends React.Component {
         </View>
 
         <TouchableOpacity
-          onPress={() => this.props.navigation.navigate('DetailPremium')}>
+          onPress={() => this.props.navigation.navigate('DetailMerchant')}>
           <View style={styles.cartsatuan}>
             <View style={{flex: 1}}>
               <Image
