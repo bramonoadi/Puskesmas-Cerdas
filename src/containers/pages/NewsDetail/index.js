@@ -1,10 +1,12 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, StatusBar} from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default function index() {
   return (
-    <View>
-      <StatusBar backgroundColor="#fff" barStyle="dark-content" />
+    <ScrollView>
+    <View style={{backgroundColor:'#f9f9f9'}}>
+      <StatusBar backgroundColor="#f9f9f9" barStyle="dark-content" />
       <View>
         <View style={styles.cardatas}>
           <Image
@@ -50,6 +52,7 @@ export default function index() {
         </View>
       </View>
     </View>
+    </ScrollView>
   );
 }
 

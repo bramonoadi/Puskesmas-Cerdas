@@ -36,7 +36,7 @@ const DirectoryNavigator = () => {
           tabBarVisible: false,
           headerShown: true,
           title: 'Detail Merchant',
-          headerStyle: {backgroundColor: '#ffffff'},
+          headerStyle: {backgroundColor: '#f9f9f9'},
           headerTintColor: '#444444',
           headerTitleStyle: {fontSize: 16, fontWeight: 'bold'},
         }}

@@ -1,8 +1,10 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, StatusBar} from 'react-native';
 import {Icon} from 'react-native-elements';
 import FastImage from 'react-native-fast-image';
+import {ScrollView} from 'react-native-gesture-handler';
 import {SliderBox} from 'react-native-image-slider-box';
+import LinearGradient from 'react-native-linear-gradient';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -19,12 +21,15 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View>
-        <View style={{marginTop: 15}}>
+      <ScrollView style={{backgroundColor: '#f9f9f9', }}>
+        <View style={{backgroundColor: '#f9f9f9', paddingVertical: 15}}>
+        <StatusBar backgroundColor="#f9f9f9" barStyle="dark-content" />
+        <View style={{}}>
+          
           <SliderBox
             ImageComponent={FastImage}
             images={this.state.images}
-            sliderBoxHeight={130}
+            sliderBoxHeight={180}
             onCurrentImagePressed={index =>
               console.warn(`image ${index} pressed`)
             }
@@ -79,13 +84,13 @@ export default class App extends React.Component {
             borderBottomLeftRadius: 10,
             borderBottomRightRadius: 10,
             paddingHorizontal: 10,
-            paddingVertical: 5,
+            paddingVertical: 10,
           }}>
           <View style={{flex: 5}}>
             <Text
               style={{
                 fontFamily: 'Poppins-SemiBold',
-                fontSize: 10,
+                fontSize: 12,
                 color: '#444',
                 paddingTop: 3,
               }}>
@@ -98,7 +103,7 @@ export default class App extends React.Component {
                 color="#318FB2"
                 name="location-arrow"
                 type="font-awesome-5"
-                size={11}
+                size={12}
               />
               <Text style={styles.distance}>2,3 Km</Text>
             </View>
@@ -112,7 +117,7 @@ export default class App extends React.Component {
             marginRight: 15,
             marginTop: 15,
             borderRadius: 10,
-            paddingVertical: 10,
+            paddingVertical: 15,
             paddingHorizontal: 15,
           }}>
           <View style={{}}>
@@ -128,24 +133,52 @@ export default class App extends React.Component {
               style={{
                 fontFamily: 'Poppins-Regular',
                 fontSize: 12,
-                color: '#444',
+                color: '#888',
                 marginBottom: 15,
               }}>
               Pr. Banjeng Asri No.D5 Maguwoharjo, Depok, Sleman Yogyakarta
             </Text>
           </View>
-
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={styles.textkiri}>Bed Tersedia</Text>
-            <Text style={styles.textkanan}>04 Kamar</Text>
-          </View>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={styles.textkiri}>Telepon</Text>
-            <Text style={styles.textkanan}>08114120001</Text>
-          </View>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={styles.textkiri}>WhatsApp</Text>
-            <Text style={styles.textkanan}>08112744122</Text>
+          <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+            <View
+              style={{
+                alignItems: 'center',
+                borderWidth: 1,
+                padding: 5,
+                borderRadius: 10,
+                flex: 1,
+                marginRight: 4,
+                borderColor: '#ddd',
+              }}>
+              <Text style={styles.textatas}>Bed Tersedia</Text>
+              <Text style={styles.textbawah}>04 Kamar</Text>
+            </View>
+            <View
+              style={{
+                alignItems: 'center',
+                borderWidth: 1,
+                padding: 5,
+                borderRadius: 10,
+                flex: 1,
+                marginHorizontal: 4,
+                borderColor: '#ddd',
+              }}>
+              <Text style={styles.textatas}>Telepon</Text>
+              <Text style={styles.textbawah}>08114120001</Text>
+            </View>
+            <View
+              style={{
+                alignItems: 'center',
+                borderWidth: 1,
+                padding: 5,
+                borderRadius: 10,
+                flex: 1,
+                marginLeft: 4,
+                borderColor: '#ddd',
+              }}>
+              <Text style={styles.textatas}>WhatsApp</Text>
+              <Text style={styles.textbawah}>08112744122</Text>
+            </View>
           </View>
         </View>
 
@@ -156,10 +189,15 @@ export default class App extends React.Component {
             marginRight: 15,
             marginTop: 15,
             borderRadius: 10,
-            paddingVertical: 10,
+            paddingVertical: 15,
             paddingHorizontal: 15,
           }}>
-          <Text style={{fontFamily:'Poppins-Regular', fontSize:12, color:'#444'}}>
+          <Text
+            style={{
+              fontFamily: 'Poppins-Regular',
+              fontSize: 12,
+              color: '#444',
+            }}>
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
@@ -172,7 +210,133 @@ export default class App extends React.Component {
             dolor sit amet, consetetur sadipscing elitr, sed
           </Text>
         </View>
-      </View>
+
+        <View
+          style={{
+            backgroundColor: '#ffffff',
+            marginLeft: 15,
+            marginRight: 15,
+            marginTop: 15,
+            marginBottom: 30,
+            borderRadius: 10,
+            paddingVertical: 15,
+            paddingHorizontal: 15,
+          }}>
+          <View style={{marginBottom: 10}}>
+            <Text
+              style={{
+                fontFamily: 'Poppins-Bold',
+                fontSize: 16,
+                color: '#4BA2C3',
+              }}>
+              Pilih Poliklinik
+            </Text>
+          </View>
+
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              borderBottomWidth: 0.5,
+              borderColor: '#ddd',
+              paddingVertical: 6,
+            }}>
+            <View>
+              <Text style={styles.namapoli}>Poli Umum</Text>
+              <Text style={styles.dokter}>Dr. Rahman Suprapto</Text>
+            </View>
+            <LinearGradient
+              colors={['#4EB0D5', '#308DB0', '#4EB0D5']}
+              style={{
+                paddingVertical: 5,
+                paddingHorizontal: 10,
+                borderRadius: 50,
+                height: 28,
+                width: 80,
+              }}>
+              <Text
+                style={{
+                  fontFamily: 'Poppins-Bold',
+                  fontSize: 12,
+                  color: '#fff',
+                  textAlign: 'center',
+                }}>
+                Daftar
+              </Text>
+            </LinearGradient>
+          </View>
+
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              borderBottomWidth: 0.5,
+              borderColor: '#ddd',
+              paddingVertical: 6,
+            }}>
+            <View>
+              <Text style={styles.namapoli}>Poli Umum</Text>
+              <Text style={styles.dokter}>Dr. Rahman Suprapto</Text>
+            </View>
+            <LinearGradient
+              colors={['#4EB0D5', '#308DB0', '#4EB0D5']}
+              style={{
+                paddingVertical: 5,
+                paddingHorizontal: 10,
+                borderRadius: 50,
+                height: 28,
+                width: 80,
+              }}>
+              <Text
+                style={{
+                  fontFamily: 'Poppins-Bold',
+                  fontSize: 12,
+                  color: '#fff',
+                  textAlign: 'center',
+                }}>
+                Daftar
+              </Text>
+            </LinearGradient>
+          </View>
+
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              borderBottomWidth: 0.5,
+              borderColor: '#ddd',
+              paddingVertical: 6,
+            }}>
+            <View>
+              <Text style={styles.namapoli}>Poli Umum</Text>
+              <Text style={styles.dokter}>Dr. Rahman Suprapto</Text>
+            </View>
+            <LinearGradient
+              colors={['#4EB0D5', '#308DB0', '#4EB0D5']}
+              style={{
+                paddingVertical: 5,
+                paddingHorizontal: 10,
+                borderRadius: 50,
+                height: 28,
+                width: 80,
+              }}>
+              <Text
+                style={{
+                  fontFamily: 'Poppins-Bold',
+                  fontSize: 12,
+                  color: '#fff',
+                  textAlign: 'center',
+                }}>
+                Daftar
+              </Text>
+            </LinearGradient>
+          </View>
+        </View>
+        </View>
+      </ScrollView>
     );
   }
 }
@@ -180,24 +344,29 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   distance: {
     fontFamily: 'Poppins-Regular',
-    fontSize: 10,
+    fontSize: 12,
     paddingLeft: 7,
     marginTop: 0,
     color: '#444',
   },
-  textkiri: {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 13,
-    color: '#666',
-    flex: 2,
-    paddingVertical: 1,
+  namapoli: {
+    fontFamily: 'Poppins-Bold',
+    fontSize: 14,
+    color: '#444',
   },
-  textkanan: {
+  dokter: {
     fontFamily: 'Poppins-SemiBold',
-    fontSize: 13,
-    flex: 4,
+    fontSize: 12,
     color: '#666',
-    paddingVertical: 1,
-    textAlign: 'right',
+  },
+  textatas: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 10,
+    color: '#444',
+  },
+  textbawah: {
+    fontFamily: 'Poppins-Bold',
+    fontSize: 12,
+    color: '#4BA2C3',
   },
 });

@@ -32,8 +32,8 @@ export default class App extends Component {
   render() {
     return (
       <ScrollView>
-        <View style={{backgroundColor: '#f2f2f2'}}>
-          <StatusBar backgroundColor="#f2f2f2" barStyle="dark-content" />
+        <View style={{backgroundColor: '#f9f9f9'}}>
+          <StatusBar backgroundColor="#f9f9f9" barStyle="dark-content" />
 
           <View
             style={{
@@ -93,7 +93,7 @@ export default class App extends Component {
                 justifyContent: 'center',
               }}>
               <TouchableOpacity
-                onPress={() => navigation.navigate('Notifikasi')}>
+                onPress={() => this.props.navigation.navigate('Notification')}>
                 <Icon
                   color="#222"
                   name="bell"
@@ -105,7 +105,7 @@ export default class App extends Component {
 
             <View>
               <Text
-                onPress={() => navigation.navigate('Notifikasi')}
+                onPress={() => this.props.navigation.navigate('Notification')}
                 style={{
                   position: 'absolute',
                   top: -20,
@@ -320,7 +320,7 @@ export default class App extends Component {
               // borderWidth: 0.5,
               paddingHorizontal: 10,
               paddingVertical: 20,
-              borderWidth: 0.5,
+              borderWidth: 0,
               borderColor: '#ddd',
             }}>
             <View>
@@ -406,7 +406,7 @@ export default class App extends Component {
             style={{flexDirection: 'row', marginBottom: 30, paddingLeft: 10}}>
             <View style={styles.box}>
               <TouchableOpacity
-                onPress={() => navigation.navigate('DetailPremium')}>
+                onPress={() => this.props.navigation.navigate('NewsDetail')}>
                 <View style={styles.inner}>
                   <Image
                     style={styles.imageproduct}
@@ -422,7 +422,7 @@ export default class App extends Component {
 
             <View style={styles.box}>
               <TouchableOpacity
-                onPress={() => navigation.navigate('DetailPremium')}>
+                onPress={() => this.props.navigation.navigate('NewsDetail')}>
                 <View style={styles.inner}>
                   <Image
                     style={styles.imageproduct}
@@ -437,16 +437,19 @@ export default class App extends Component {
             </View>
 
             <View style={styles.box}>
-              <View style={styles.inner}>
-                <Image
-                  style={styles.imageproduct}
-                  source={require('../../../assets/images/7.jpg')}
-                />
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('NewsDetail')}>
+                <View style={styles.inner}>
+                  <Image
+                    style={styles.imageproduct}
+                    source={require('../../../assets/images/7.jpg')}
+                  />
 
-                <Text style={styles.titleproduct}>
-                  Mengenal buah-buahan untuk daya tahan tubuh
-                </Text>
-              </View>
+                  <Text style={styles.titleproduct}>
+                    Mengenal buah-buahan untuk daya tahan tubuh
+                  </Text>
+                </View>
+              </TouchableOpacity>
             </View>
           </ScrollView>
 
@@ -555,8 +558,7 @@ const styles = StyleSheet.create({
   inner: {
     backgroundColor: '#fff',
     borderRadius: 5,
-
-    borderWidth: 0.5,
+    borderWidth: 0,
     borderColor: '#ddd',
   },
   titleproduct: {

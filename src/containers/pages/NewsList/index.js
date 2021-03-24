@@ -1,6 +1,6 @@
 import React from 'react';
-import {StyleSheet, Text, View, StatusBar, Image} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {StyleSheet, Text, View, StatusBar, Image, } from 'react-native';
+import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 
 class NewsList extends React.Component {
   constructor(props) {
@@ -14,8 +14,9 @@ class NewsList extends React.Component {
 
   render() {
     return (
-      <View style={{paddingLeft: 15, marginTop: 15, paddingRight: 15}}>
-        <StatusBar backgroundColor="#f2f2f2" barStyle="dark-content" />
+      <ScrollView style={{backgroundColor:'#f9f9f9'}}>
+      <View style={{paddingLeft: 15, marginTop: 15, paddingRight: 15,}}>
+        <StatusBar backgroundColor="#f9f9f9" barStyle="dark-content" />
 
         <TouchableOpacity
           onPress={() => this.props.navigation.navigate('NewsDetail')}>
@@ -56,6 +57,7 @@ class NewsList extends React.Component {
           </View>
         </View>
       </View>
+      </ScrollView>
     );
   }
 }

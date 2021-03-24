@@ -5,11 +5,11 @@ import {
   Text,
   View,
   Image,
-  ScrollView,
   StatusBar,
   TextInput,
 } from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {ScrollView} from 'react-native-gesture-handler';
 
 class Directory extends React.Component {
   constructor(props) {
@@ -29,8 +29,8 @@ class Directory extends React.Component {
 
   render() {
     return (
-      <View style={{backgroundColor: '#f2f2f2'}}>
-        <StatusBar backgroundColor="#f2f2f2" barStyle="dark-content" />
+      <View style={{backgroundColor: '#f9f9f9'}}>
+        <StatusBar backgroundColor="#f9f9f9" barStyle="dark-content" />
         <View
           style={{
             flexDirection: 'row',
@@ -110,24 +110,55 @@ class Directory extends React.Component {
             style={{width: 16, height: 16, marginTop: 5}}
             source={require('../../../assets/icon/all.png')}
           />
-          
         </View>
 
-        <TouchableOpacity
-          onPress={() => this.props.navigation.navigate('DetailMerchant')}>
+        <ScrollView>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('DetailMerchant')}>
+            <View style={styles.cartsatuan}>
+              <View style={{flex: 1}}>
+                <Image
+                  style={styles.images}
+                  source={require('../../../assets/images/4.jpg')}
+                />
+              </View>
+              <View style={{flex: 4, paddingLeft: 20}}>
+                <Text style={styles.title}>Puskesmas Depok II</Text>
+                <Text style={styles.alamat}>
+                  Jl. Letkol Subadri, Triharjo, Sleman, Kalah Ijo 1, Triharjo
+                </Text>
+                <Text style={styles.alamat}>Sleman. DI Yogyakarta</Text>
+                <View style={{flexDirection: 'row', marginTop: 2}}>
+                  <View style={{flexDirection: 'row', marginTop: 2}}>
+                    <Icon
+                      color="#318FB2"
+                      name="location-arrow"
+                      type="font-awesome-5"
+                      size={11}
+                    />
+                    <Text style={styles.distance}>2,3 Km</Text>
+                  </View>
+                  <View>
+                    <Text style={styles.statusbuka}>Buka</Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </TouchableOpacity>
+
           <View style={styles.cartsatuan}>
             <View style={{flex: 1}}>
               <Image
                 style={styles.images}
-                source={require('../../../assets/images/4.jpg')}
+                source={require('../../../assets/images/5.jpg')}
               />
             </View>
             <View style={{flex: 4, paddingLeft: 20}}>
-              <Text style={styles.title}>Puskesmas Depok II</Text>
+              <Text style={styles.title}>Puskesmas Condong Catur</Text>
               <Text style={styles.alamat}>
-                Jl. Letkol Subadri, Triharjo, Sleman, Kalah Ijo 1, Triharjo
+                Jl. Affandi No.4, Jembatan merah, Gejayan, Sleman
               </Text>
-              <Text style={styles.alamat}>Sleman. DI Yogyakarta</Text>
+              <Text style={styles.alamat}>D.I Yogyakarta</Text>
               <View style={{flexDirection: 'row', marginTop: 2}}>
                 <View style={{flexDirection: 'row', marginTop: 2}}>
                   <Icon
@@ -144,52 +175,21 @@ class Directory extends React.Component {
               </View>
             </View>
           </View>
-        </TouchableOpacity>
 
-        <View style={styles.cartsatuan}>
-          <View style={{flex: 1}}>
-            <Image
-              style={styles.images}
-              source={require('../../../assets/images/5.jpg')}
-            />
-          </View>
-          <View style={{flex: 4, paddingLeft: 20}}>
-            <Text style={styles.title}>Puskesmas Condong Catur</Text>
-            <Text style={styles.alamat}>
-              Jl. Affandi No.4, Jembatan merah, Gejayan, Sleman
-            </Text>
-            <Text style={styles.alamat}>D.I Yogyakarta</Text>
-            <View style={{flexDirection: 'row', marginTop: 2}}>
-                <View style={{flexDirection: 'row', marginTop: 2}}>
-                  <Icon
-                    color="#318FB2"
-                    name="location-arrow"
-                    type="font-awesome-5"
-                    size={11}
-                  />
-                  <Text style={styles.distance}>2,3 Km</Text>
-                </View>
-                <View>
-                  <Text style={styles.statusbuka}>Buka</Text>
-                </View>
-              </View>
-          </View>
-        </View>
-
-        <View style={styles.cartsatuan}>
-          <View style={{flex: 1}}>
-            <Image
-              style={styles.images}
-              source={require('../../../assets/images/6.jpg')}
-            />
-          </View>
-          <View style={{flex: 4, paddingLeft: 20}}>
-            <Text style={styles.title}>Puskesmas Imogiri</Text>
-            <Text style={styles.alamat}>
-              Jl. Kaliurang Km.7, nganglik, Sleman
-            </Text>
-            <Text style={styles.alamat}>D.I Yogyakarta</Text>
-            <View style={{flexDirection: 'row', marginTop: 2}}>
+          <View style={styles.cartsatuan}>
+            <View style={{flex: 1}}>
+              <Image
+                style={styles.images}
+                source={require('../../../assets/images/6.jpg')}
+              />
+            </View>
+            <View style={{flex: 4, paddingLeft: 20}}>
+              <Text style={styles.title}>Puskesmas Imogiri</Text>
+              <Text style={styles.alamat}>
+                Jl. Kaliurang Km.7, nganglik, Sleman
+              </Text>
+              <Text style={styles.alamat}>D.I Yogyakarta</Text>
+              <View style={{flexDirection: 'row', marginTop: 2}}>
                 <View style={{flexDirection: 'row', marginTop: 2}}>
                   <Icon
                     color="#318FB2"
@@ -203,23 +203,23 @@ class Directory extends React.Component {
                   <Text style={styles.statustutup}>Tutup</Text>
                 </View>
               </View>
+            </View>
           </View>
-        </View>
 
-        <View style={styles.cartsatuan}>
-          <View style={{flex: 1}}>
-            <Image
-              style={styles.images}
-              source={require('../../../assets/images/1.jpg')}
-            />
-          </View>
-          <View style={{flex: 4, paddingLeft: 20}}>
-            <Text style={styles.title}>Pueskesmas Tajem</Text>
-            <Text style={styles.alamat}>
-              Jl. Ring Road Utara No.7, Condongcatur, Depok, Sleman
-            </Text>
-            <Text style={styles.alamat}>D.I Yogyakarta</Text>
-            <View style={{flexDirection: 'row', marginTop: 2}}>
+          <View style={styles.cartsatuan}>
+            <View style={{flex: 1}}>
+              <Image
+                style={styles.images}
+                source={require('../../../assets/images/1.jpg')}
+              />
+            </View>
+            <View style={{flex: 4, paddingLeft: 20}}>
+              <Text style={styles.title}>Pueskesmas Tajem</Text>
+              <Text style={styles.alamat}>
+                Jl. Ring Road Utara No.7, Condongcatur, Depok, Sleman
+              </Text>
+              <Text style={styles.alamat}>D.I Yogyakarta</Text>
+              <View style={{flexDirection: 'row', marginTop: 2}}>
                 <View style={{flexDirection: 'row', marginTop: 2}}>
                   <Icon
                     color="#318FB2"
@@ -233,23 +233,23 @@ class Directory extends React.Component {
                   <Text style={styles.statustutup}>Tutup</Text>
                 </View>
               </View>
+            </View>
           </View>
-        </View>
 
-        <View style={styles.cartsatuan}>
-          <View style={{flex: 1}}>
-            <Image
-              style={styles.images}
-              source={require('../../../assets/images/4.jpg')}
-            />
-          </View>
-          <View style={{flex: 4, paddingLeft: 20}}>
-            <Text style={styles.title}>Puskesmas Seturan</Text>
-            <Text style={styles.alamat}>
-              Jl. Laksda Adisucipto, No.45, Maguwo, Sleman
-            </Text>
-            <Text style={styles.alamat}>D.I Yogyakarta</Text>
-            <View style={{flexDirection: 'row', marginTop: 2}}>
+          <View style={styles.cartsatuan}>
+            <View style={{flex: 1}}>
+              <Image
+                style={styles.images}
+                source={require('../../../assets/images/4.jpg')}
+              />
+            </View>
+            <View style={{flex: 4, paddingLeft: 20}}>
+              <Text style={styles.title}>Puskesmas Seturan</Text>
+              <Text style={styles.alamat}>
+                Jl. Laksda Adisucipto, No.45, Maguwo, Sleman
+              </Text>
+              <Text style={styles.alamat}>D.I Yogyakarta</Text>
+              <View style={{flexDirection: 'row', marginTop: 2}}>
                 <View style={{flexDirection: 'row', marginTop: 2}}>
                   <Icon
                     color="#318FB2"
@@ -263,9 +263,11 @@ class Directory extends React.Component {
                   <Text style={styles.statusbuka}>Buka</Text>
                 </View>
               </View>
+            </View>
           </View>
+          </ScrollView>
         </View>
-      </View>
+      
     );
   }
 }

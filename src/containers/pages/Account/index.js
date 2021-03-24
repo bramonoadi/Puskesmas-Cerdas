@@ -6,8 +6,8 @@ import LinearGradient from 'react-native-linear-gradient';
 
 const Account = ({navigation}) => {
   return (
-    <View style={{flex: 1, backgroundColor:'#f2f2f2'}}>
-      <StatusBar backgroundColor="#f2f2f2" barStyle="dark-content" />
+    <View style={{flex: 1, backgroundColor:'#f9f9f9'}}>
+      <StatusBar backgroundColor="#f9f9f9" barStyle="dark-content" />
 
 <View
             style={{

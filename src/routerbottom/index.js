@@ -44,6 +44,9 @@ function RouterBottom() {
             if (exploreActiveRoute.name === "NewsDetail") {
               tabBarVisible = false;
             }
+            if (exploreActiveRoute.name === "Notification") {
+              tabBarVisible = false;
+            }
           }
           //   tabBarButton: (props) => (
           //   <TabComponent label="directory" {...props} />
@@ -100,6 +103,7 @@ function RouterBottom() {
           tabBarButton: (props) => <TabComponent label="account" {...props} />,
         }}
       />
+      
     </Tab.Navigator>
   );
 }

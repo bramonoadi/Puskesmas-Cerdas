@@ -14,6 +14,7 @@ import {
   Directory,
   NewsList,
   NewsDetail,
+  Notification,
 } from '../containers/pages';
 
 const Stack = createStackNavigator();
@@ -36,7 +37,15 @@ const HomepageNavigator = () => {
       <Stack.Screen
         name="Directory"
         component={Directory}
-        options={{headerShown: true, title: 'Daftar Puskesmas'}}
+        options={{
+          // headerLeft: true,
+          tabBarVisible: false,
+          headerShown: true,
+          title: 'Cari Puskesmas',
+          headerStyle: {backgroundColor: '#f9f9f9'},
+          headerTintColor: '#444444',
+          headerTitleStyle: {fontSize: 16, fontWeight: 'bold'},
+        }}
       />
 
       <Stack.Screen
@@ -47,7 +56,7 @@ const HomepageNavigator = () => {
           tabBarVisible: false,
           headerShown: true,
           title: 'Detail Merchant',
-          headerStyle: {backgroundColor: '#ffffff'},
+          headerStyle: {backgroundColor: '#f9f9f9'},
           headerTintColor: '#444444',
           headerTitleStyle: {fontSize: 16, fontWeight: 'bold'},
         }}
@@ -61,7 +70,7 @@ const HomepageNavigator = () => {
           tabBarVisible: false,
           headerShown: true,
           title: 'Artikel Kesehatan',
-          headerStyle: {backgroundColor: '#ffffff'},
+          headerStyle: {backgroundColor: '#f9f9f9'},
           headerTintColor: '#444444',
           headerTitleStyle: {fontSize: 16, fontWeight: 'bold'},
         }}
@@ -75,11 +84,26 @@ const HomepageNavigator = () => {
           tabBarVisible: false,
           headerShown: true,
           title: 'Detail Artikel',
-          headerStyle: {backgroundColor: '#ffffff'},
+          headerStyle: {backgroundColor: '#f9f9f9'},
           headerTintColor: '#444444',
           headerTitleStyle: {fontSize: 16, fontWeight: 'bold'},
         }}
       />
+
+<Stack.Screen
+        name="Notification"
+        component={Notification}
+        options={{
+          // headerLeft: true,
+          tabBarVisible: false,
+          headerShown: true,
+          title: 'Notifikasi',
+          headerStyle: {backgroundColor: '#f9f9f9'},
+          headerTintColor: '#444444',
+          headerTitleStyle: {fontSize: 16, fontWeight: 'bold'},
+        }}
+      />
+
     </Stack.Navigator>
   );
 };
