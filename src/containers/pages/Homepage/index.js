@@ -219,6 +219,173 @@ export default class App extends Component {
             </View>
           </ImageBackground>
 
+          {/* <ImageBackground
+            source={require('../../../assets/images/background.jpg')}
+            imageStyle={{
+              borderTopLeftRadius: 0,
+              borderTopRightRadius: 0,
+              borderBottomLeftRadius: 10,
+              borderBottomRightRadius: 10,
+            }}
+            style={{
+              backgroundColor: '#fff',
+              marginLeft: 15,
+              marginRight: 15,
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              elevation: 3,
+              borderTopLeftRadius: 0,
+              borderTopRightRadius: 0,
+              borderBottomLeftRadius: 10,
+              borderBottomRightRadius: 10,
+              paddingHorizontal: 10,
+              paddingVertical: 8,
+            }}>
+            <View style={{}}>
+              <Text
+                style={{
+                  fontFamily: 'Poppins-SemiBold',
+                  fontSize: 10,
+                  color: '#fff',
+                }}>
+                Selamat, akun telah ter verifikasi, Anda bisa menggunakan fitur
+                pendaftaran..
+              </Text>
+            </View>
+          </ImageBackground> */}
+
+          <View
+            style={{
+              justifyContent: 'space-between',
+              flexDirection: 'row',
+              marginTop: 30,
+              marginLeft: 20,
+              marginRight: 20,
+              paddingBottom: 15,
+            }}>
+            <View style={{}}>
+              <Text
+                style={{
+                  fontFamily: 'Poppins-Bold',
+                  fontSize: 14,
+                  color: '#444',
+                }}>
+                Informasi Antrian.
+              </Text>
+              <Text
+                style={{
+                  fontFamily: 'Poppins-Regular',
+                  fontSize: 12,
+                  color: '#999',
+                  marginTop: -5,
+                }}>
+                Status antrian Anda
+              </Text>
+            </View>
+            <Image
+              style={{width: 16, height: 16, marginTop: 5}}
+              source={require('../../../assets/icon/all.png')}
+            />
+          </View>
+
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('BookingDetail')}>
+            <View
+              style={{
+                backgroundColor: '#ffffff',
+                marginTop: 0,
+                marginLeft: 15,
+                marginRight: 15,
+                borderRadius: 10,
+                borderColor: '#dddddd',
+                borderWidth: 0.5,
+                paddingHorizontal: 10,
+                paddingVertical: 15,
+                borderColor: '#ddd',
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}>
+              <View style={{flex: 2, alignItems: 'center'}}>
+                <Text
+                  style={{
+                    fontFamily: 'Poppins-Bold',
+                    fontSize: 10,
+                    color: '#DB5B5B',
+                    textAlign: 'center',
+                    marginTop: 0,
+                  }}>
+                  Antrian Berjalan
+                </Text>
+                <Text
+                  style={{
+                    fontFamily: 'Poppins-Bold',
+                    fontSize: 90,
+                    color: '#DB5B5B',
+                    textAlign: 'center',
+                    marginBottom: -40,
+                    marginTop: -10,
+                  }}>
+                  08
+                </Text>
+              </View>
+              <View
+                style={{
+                  flex: 3,
+                  borderLeftWidth: 0.5,
+                  borderColor: '#ddd',
+                  paddingLeft: 15,
+                }}>
+                <Text
+                  style={{
+                    fontFamily: 'Poppins-Bold',
+                    fontSize: 14,
+                    color: '#444',
+                  }}>
+                  Puskesmas Condongcatur
+                </Text>
+                <Text
+                  style={{
+                    fontFamily: 'Poppins-Regular',
+                    fontSize: 11,
+                    color: '#666',
+                  }}>
+                  Jl. Letkol Subadri, Triharjo, Sleman, Kalah Ijo 1, Triharjo,
+                  Sleman, DIY 55514
+                </Text>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    backgroundColor: '#f2f2f2',
+                    justifyContent: 'space-between',
+                    paddingHorizontal: 15,
+                    paddingVertical: 0,
+                    borderRadius: 5,
+                    marginTop: 10,
+                    alignItems: 'center',
+                  }}>
+                  <Text
+                    style={{
+                      fontFamily: 'Poppins-Medium',
+                      fontSize: 12,
+                      color: '#666',
+                    }}>
+                    No. Antrian Anda
+                  </Text>
+                  <Text
+                    style={{
+                      fontFamily: 'Poppins-Bold',
+                      fontSize: 35,
+                      color: '#308DB0',
+                      paddingTop: 0,
+                      marginBottom: -8,
+                    }}>
+                    12
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </TouchableOpacity>
+
           <View
             style={{
               justifyContent: 'space-between',
@@ -335,12 +502,12 @@ export default class App extends Component {
                       style={styles.imagemenu}
                       source={require('../../../assets/icon/hospital.png')}
                     />
-                    <Text style={styles.tetxmenu}>Lihat Puskesmas</Text>
+                    <Text style={styles.tetxmenu}>Daftar Klinik</Text>
                   </TouchableOpacity>
                 </View>
                 <View style={{width: '33.33%'}}>
                   <TouchableOpacity
-                    onPress={() => navigation.navigate('Product')}>
+                    onPress={() => this.props.navigation.navigate('InfoCovid')}>
                     <Image
                       style={styles.imagemenu}
                       source={require('../../../assets/icon/covid.png')}

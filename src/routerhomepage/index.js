@@ -10,11 +10,18 @@ import Account from '../containers/pages/Account';
 
 import TabComponent from '../components/Tabs';
 import {
+  
+  Login,
+  Splash,
   DetailMerchant,
   Directory,
   NewsList,
   NewsDetail,
   Notification,
+  BookingDetail,
+  BookingForm,
+  BookingSuccess,
+  InfoCovid,
 } from '../containers/pages';
 
 const Stack = createStackNavigator();
@@ -28,6 +35,26 @@ const Stack = createStackNavigator();
 const HomepageNavigator = () => {
   return (
     <Stack.Navigator>
+      <Stack.Screen
+        name="Splash"
+        component={Splash}
+        options={{navBarHidden: true, headerShown: false}}
+      />
+
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{
+          // headerLeft: true,
+          tabBarVisible: false,
+          headerShown: false,
+          title: 'Login',
+          headerStyle: {backgroundColor: '#f9f9f9'},
+          headerTintColor: '#444444',
+          headerTitleStyle: {fontSize: 16, fontWeight: 'bold'},
+        }}
+      />
+
       <Stack.Screen
         name="Homepage"
         component={Homepage}
@@ -90,7 +117,7 @@ const HomepageNavigator = () => {
         }}
       />
 
-<Stack.Screen
+      <Stack.Screen
         name="Notification"
         component={Notification}
         options={{
@@ -104,6 +131,61 @@ const HomepageNavigator = () => {
         }}
       />
 
+      <Stack.Screen
+        name="BookingDetail"
+        component={BookingDetail}
+        options={{
+          // headerLeft: true,
+          tabBarVisible: false,
+          headerShown: true,
+          title: 'Detail Reservasi',
+          headerStyle: {backgroundColor: '#f9f9f9'},
+          headerTintColor: '#444444',
+          headerTitleStyle: {fontSize: 16, fontWeight: 'bold'},
+        }}
+      />
+
+      <Stack.Screen
+        name="BookingForm"
+        component={BookingForm}
+        options={{
+          // headerLeft: true,
+          tabBarVisible: false,
+          headerShown: true,
+          title: 'Form Reservasi',
+          headerStyle: {backgroundColor: '#f9f9f9'},
+          headerTintColor: '#444444',
+          headerTitleStyle: {fontSize: 16, fontWeight: 'bold'},
+        }}
+      />
+
+      <Stack.Screen
+        name="BookingSuccess"
+        component={BookingSuccess}
+        options={{
+          // headerLeft: true,
+          tabBarVisible: false,
+          headerShown: true,
+          title: 'Reservasi Sukses',
+          headerStyle: {backgroundColor: '#f9f9f9'},
+          headerTintColor: '#444444',
+          headerTitleStyle: {fontSize: 16, fontWeight: 'bold'},
+        }}
+      />
+
+      <Stack.Screen
+        name="InfoCovid"
+        component={InfoCovid}
+        options={{
+          // headerLeft: true,
+          tabBarVisible: false,
+          headerShown: true,
+          title: 'Info Terkini Covid-19',
+          headerStyle: {backgroundColor: '#f9f9f9'},
+          headerTintColor: '#444444',
+          headerTitleStyle: {fontSize: 16, fontWeight: 'bold'},
+        }}
+      />
     </Stack.Navigator>
   );
 };

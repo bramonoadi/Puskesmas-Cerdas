@@ -15,6 +15,7 @@ const Stack = createStackNavigator();
 
 const DirectoryNavigator = () => {
   return (
+
     <Stack.Navigator
       initial={Directory}
       initialRouteName={Directory}
@@ -28,6 +29,9 @@ const DirectoryNavigator = () => {
           }
         }
       />
+
+
+
       <Stack.Screen
         name="DetailMerchant"
         component={DetailMerchant}

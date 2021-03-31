@@ -62,7 +62,7 @@ class Directory extends React.Component {
                 color: '#444444',
                 fontFamily: 'Poppins-Regular',
               }}
-              placeholder={'Cari nama puskesmas/desa/kecamatan..'}
+              placeholder={'Cari nama klinik/desa/kecamatan..'}
               placeholderTextColor={'#ccc'}
             />
             <TouchableOpacity
@@ -94,7 +94,7 @@ class Directory extends React.Component {
                 fontSize: 14,
                 color: '#444',
               }}>
-              Puskesmas Terdekat.
+              Klinik Terdekat.
             </Text>
             <Text
               style={{
@@ -146,6 +146,8 @@ class Directory extends React.Component {
             </View>
           </TouchableOpacity>
 
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('DetailMerchant')}>
           <View style={styles.cartsatuan}>
             <View style={{flex: 1}}>
               <Image
@@ -175,7 +177,10 @@ class Directory extends React.Component {
               </View>
             </View>
           </View>
+          </TouchableOpacity>
 
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('DetailMerchant')}>
           <View style={styles.cartsatuan}>
             <View style={{flex: 1}}>
               <Image
@@ -205,7 +210,10 @@ class Directory extends React.Component {
               </View>
             </View>
           </View>
+          </TouchableOpacity>
 
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('DetailMerchant')}>
           <View style={styles.cartsatuan}>
             <View style={{flex: 1}}>
               <Image
@@ -235,7 +243,10 @@ class Directory extends React.Component {
               </View>
             </View>
           </View>
+          </TouchableOpacity>
 
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('DetailMerchant')}>
           <View style={styles.cartsatuan}>
             <View style={{flex: 1}}>
               <Image
@@ -265,6 +276,7 @@ class Directory extends React.Component {
               </View>
             </View>
           </View>
+          </TouchableOpacity>
           </ScrollView>
         </View>
       
