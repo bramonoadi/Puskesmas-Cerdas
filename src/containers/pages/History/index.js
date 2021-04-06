@@ -6,42 +6,42 @@ import LinearGradient from 'react-native-linear-gradient';
 
 const Account = ({navigation}) => {
   return (
-    <View style={{flex: 1, paddingHorizontal: 15, backgroundColor:'#f9f9f9'}}>
+    <View style={{flex: 1, paddingHorizontal: 15, backgroundColor: '#f9f9f9'}}>
       <StatusBar backgroundColor="#f9f9f9" barStyle="dark-content" />
 
       <View
+        style={{
+          justifyContent: 'space-between',
+          flexDirection: 'row',
+          marginTop: 20,
+          marginLeft: 5,
+          marginRight: 5,
+          paddingBottom: 0,
+        }}>
+        <View style={{}}>
+          <Text
             style={{
-              justifyContent: 'space-between',
-              flexDirection: 'row',
-              marginTop: 20,
-              marginLeft: 5,
-              marginRight: 5,
-              paddingBottom: 0,
+              fontFamily: 'Poppins-Bold',
+              fontSize: 14,
+              color: '#444',
             }}>
-            <View style={{}}>
-              <Text
-                style={{
-                  fontFamily: 'Poppins-Bold',
-                  fontSize: 14,
-                  color: '#444',
-                }}>
-                Histori Pendaftaran.
-              </Text>
-              <Text
-                style={{
-                  fontFamily: 'Poppins-Regular',
-                  fontSize: 12,
-                  color: '#999',
-                  marginTop: -5,
-                }}>
-                Rekap pendaftaran Anda
-              </Text>
-            </View>
-            <Image
-              style={{width: 16, height: 16, marginTop: 5}}
-              source={require('../../../assets/icon/all.png')}
-            />
-          </View>
+            Histori Pendaftaran.
+          </Text>
+          <Text
+            style={{
+              fontFamily: 'Poppins-Regular',
+              fontSize: 12,
+              color: '#999',
+              marginTop: -5,
+            }}>
+            Rekap pendaftaran Anda
+          </Text>
+        </View>
+        <Image
+          style={{width: 16, height: 16, marginTop: 5}}
+          source={require('../../../assets/icon/all.png')}
+        />
+      </View>
 
       <View
         style={{
@@ -50,7 +50,7 @@ const Account = ({navigation}) => {
           borderRadius: 10,
           paddingVertical: 5,
           paddingHorizontal: 15,
-          borderWidth: 0,
+          borderWidth: 0.5,
           borderColor: '#ddd',
         }}>
         <View
@@ -64,7 +64,12 @@ const Account = ({navigation}) => {
           <Text style={styles.textkanan}>27 Maret 2021</Text>
         </View>
 
-        <View style={{flexDirection: 'row', justifyContent: 'space-between', paddingTop:4}}>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            paddingTop: 4,
+          }}>
           <Text style={styles.textkiri}>Klinik</Text>
           <Text style={styles.textkanan}>Puskesmas Depok II</Text>
         </View>
@@ -100,7 +105,7 @@ const Account = ({navigation}) => {
           borderRadius: 10,
           paddingVertical: 5,
           paddingHorizontal: 15,
-          borderWidth: 0,
+          borderWidth: 0.5,
           borderColor: '#ddd',
         }}>
         <View
@@ -114,7 +119,12 @@ const Account = ({navigation}) => {
           <Text style={styles.textkanan}>27 Maret 2021</Text>
         </View>
 
-        <View style={{flexDirection: 'row', justifyContent: 'space-between', paddingTop:4}}>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            paddingTop: 4,
+          }}>
           <Text style={styles.textkiri}>Klinik</Text>
           <Text style={styles.textkanan}>Puskesmas Depok II</Text>
         </View>

@@ -86,6 +86,8 @@ export default class App extends React.Component {
               borderBottomRightRadius: 10,
               paddingHorizontal: 10,
               paddingVertical: 10,
+              borderWidth:0.5,
+              borderColor:'#ddd',
             }}>
             <View style={{flex: 5}}>
               <Text
@@ -120,6 +122,8 @@ export default class App extends React.Component {
               borderRadius: 10,
               paddingVertical: 15,
               paddingHorizontal: 15,
+              borderWidth:0.5,
+              borderColor:'#ddd',
             }}>
             <View style={{}}>
               <Text
@@ -193,12 +197,15 @@ export default class App extends React.Component {
               borderRadius: 10,
               paddingVertical: 15,
               paddingHorizontal: 15,
+              borderWidth:0.5,
+              borderColor:'#ddd',
             }}>
             <Text
               style={{
                 fontFamily: 'Poppins-Regular',
                 fontSize: 12,
                 color: '#444',
+                textAlign:'justify',
               }}>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
@@ -210,7 +217,7 @@ export default class App extends React.Component {
               voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
               Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
               dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-              elitr, sed
+              elitr, se
             </Text>
           </View>
 
@@ -223,6 +230,8 @@ export default class App extends React.Component {
               borderRadius: 10,
               paddingVertical: 15,
               paddingHorizontal: 15,
+              borderWidth:0.5,
+              borderColor:'#ddd',
             }}>
             <View style={{marginBottom: 10}}>
               <Text
@@ -356,7 +365,9 @@ export default class App extends React.Component {
             marginHorizontal: 15,
             marginBottom: 30,
             borderRadius:10,
-            padding:15
+            padding:15,
+            borderWidth:0.5,
+              borderColor:'#ddd',
           }}>
           <MapView
             provider={PROVIDER_GOOGLE} // remove if not using Google Maps

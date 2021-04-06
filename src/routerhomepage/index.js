@@ -6,8 +6,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Homepage from '../containers/pages/Homepage';
 // import Directory from '../containers/pages/Directory';
 import History from '../containers/pages/History';
-import Account from '../containers/pages/Account';
-
 import TabComponent from '../components/Tabs';
 import {
   
@@ -22,6 +20,7 @@ import {
   BookingForm,
   BookingSuccess,
   InfoCovid,
+  About,
 } from '../containers/pages';
 
 const Stack = createStackNavigator();
@@ -186,6 +185,22 @@ const HomepageNavigator = () => {
           headerTitleStyle: {fontSize: 16, fontWeight: 'bold'},
         }}
       />
+
+<Stack.Screen
+        name="About"
+        component={About}
+        options={{
+          // headerLeft: true,
+          tabBarVisible: false,
+          headerShown: true,
+          title: 'Tentang Smart Clinic',
+          headerStyle: {backgroundColor: '#f9f9f9'},
+          headerTintColor: '#444444',
+          headerTitleStyle: {fontSize: 16, fontWeight: 'bold'},
+        }}
+      />
+
+
     </Stack.Navigator>
   );
 };

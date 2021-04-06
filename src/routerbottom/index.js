@@ -6,7 +6,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 import History from '../containers/pages/History';
 import Account from '../containers/pages/Account';
 
-
 import TabComponent from '../components/Tabs';
 import {HomepageNavigator} from '../routerhomepage';
 import {DirectoryNavigator} from '../router';

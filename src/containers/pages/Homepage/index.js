@@ -487,8 +487,9 @@ export default class App extends Component {
               // borderWidth: 0.5,
               paddingHorizontal: 10,
               paddingVertical: 20,
-              borderWidth: 0,
               borderColor: '#ddd',
+              borderWidth:0.5,
+              borderColor:'#ddd',
             }}>
             <View>
               <View

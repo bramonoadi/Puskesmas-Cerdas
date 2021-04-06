@@ -4,44 +4,60 @@ import {StyleSheet, Text, View, Image, StatusBar} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import LinearGradient from 'react-native-linear-gradient';
 
-const Account = ({navigation}) => {
-  return (
-    <View style={{flex: 1, backgroundColor:'#f9f9f9'}}>
+class Account extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      search: '',
+      product: [],
+      refreshing: false,
+      page: 0,
+      error: null,
+    };
+  }
+
+  componentDidMount() {
+    console.log(this.props);
+  }
+
+  render() {
+    return (
+    <View style={{flex: 1, backgroundColor: '#f9f9f9'}}>
       <StatusBar backgroundColor="#f9f9f9" barStyle="dark-content" />
 
-<View
+      <View
+        style={{
+          justifyContent: 'space-between',
+          flexDirection: 'row',
+          marginTop: 15,
+          marginLeft: 20,
+          marginRight: 20,
+          paddingBottom: 0,
+        }}>
+        <View style={{}}>
+          <Text
             style={{
-              justifyContent: 'space-between',
-              flexDirection: 'row',
-              marginTop: 15,
-              marginLeft: 20,
-              marginRight: 20,
-              paddingBottom: 0,
+              fontFamily: 'Poppins-Bold',
+              fontSize: 14,
+              color: '#444',
             }}>
-            <View style={{}}>
-              <Text
-                style={{
-                  fontFamily: 'Poppins-Bold',
-                  fontSize: 14,
-                  color: '#444',
-                }}>
-                Profil Saya.
-              </Text>
-              <Text
-                style={{
-                  fontFamily: 'Poppins-Regular',
-                  fontSize: 12,
-                  color: '#999',
-                  marginTop: -5,
-                }}>
-                Account dan informasi lainnya
-              </Text>
-            </View>
-            <Image
-              style={{width: 16, height: 16, marginTop: 5}}
-              source={require('../../../assets/icon/all.png')}
-            />
-          </View>
+            Profil Saya.
+          </Text>
+          <Text
+            style={{
+              fontFamily: 'Poppins-Regular',
+              fontSize: 12,
+              color: '#999',
+              marginTop: -5,
+            }}>
+            Account dan informasi lainnya
+          </Text>
+        </View>
+        <Image
+          style={{width: 16, height: 16, marginTop: 5}}
+          source={require('../../../assets/icon/all.png')}
+        />
+      </View>
 
       <StatusBar backgroundColor="#f2f2f2" barStyle="dark-content" />
       <View style={{flex: 1}}>
@@ -94,6 +110,8 @@ const Account = ({navigation}) => {
           </LinearGradient>
         </View>
 
+        <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('Homepage')}>
         <View
           style={{
             backgroundColor: '#ffffff',
@@ -103,10 +121,17 @@ const Account = ({navigation}) => {
             borderRadius: 10,
             paddingVertical: 5,
             paddingHorizontal: 15,
+            borderWidth: 0.5,
+            borderColor: '#ddd',
           }}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop:5}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              marginTop: 5,
+            }}>
             <Text style={styles.textkiri}>Alamat</Text>
-            <Text style={styles.textkanan}> 
+            <Text style={styles.textkanan}>
               Pr. Banjeng Asri No.D5 Maguwoharjo, Depok, Sleman Yogyakarta
             </Text>
           </View>
@@ -127,9 +152,8 @@ const Account = ({navigation}) => {
             <Text style={styles.textkiri}>No. Handphone</Text>
             <Text style={styles.textkanan}>08114120001</Text>
           </View>
-
-          
         </View>
+        </TouchableOpacity>
 
         <View
           style={{
@@ -140,12 +164,16 @@ const Account = ({navigation}) => {
             borderRadius: 10,
             paddingVertical: 5,
             paddingHorizontal: 15,
+            borderWidth: 0.5,
+            borderColor: '#ddd',
           }}>
-          <TouchableOpacity onPress={() => navigation.navigate('Tentang')}>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('EditProfile')}>
             <Text style={styles.textbawah}>Edit Profil</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Informasi')}>
-            <Text style={styles.textbawah}>Tentang Puskesmas Cerdas</Text>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('Homepage')}>
+            <Text style={styles.textbawah}>Tentang Smart Clinic</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('TanyaJawab')}>
             <Text style={styles.textbawah}>Tanya Jawab</Text>
@@ -169,6 +197,7 @@ const Account = ({navigation}) => {
     </View>
   );
 };
+}
 
 export default Account;
 
@@ -197,16 +226,16 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     fontSize: 13,
     color: '#666',
-    flex:2,
+    flex: 2,
     paddingVertical: 1,
   },
   textkanan: {
     fontFamily: 'Poppins-SemiBold',
     fontSize: 13,
-    flex:4,
+    flex: 4,
     color: '#666',
     paddingVertical: 1,
-    textAlign:'right',
+    textAlign: 'right',
   },
   textbottomnav: {
     fontFamily: 'Poppins-Regular',

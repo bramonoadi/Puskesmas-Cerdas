@@ -12,6 +12,7 @@ import BookingDetail from './BookingDetail';
 import BookingForm from './BookingForm';
 import BookingSuccess from './BookingSuccess';
 import InfoCovid from './InfoCovid';
+import About from './About';
 
 export {
   Splash,
@@ -28,4 +29,5 @@ export {
   BookingForm,
   BookingSuccess,
   InfoCovid,
+  About,
 };
